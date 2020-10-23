@@ -33,7 +33,25 @@ public class Test {
             System.out.println("请选择要租的汽车编号");
 
             //车辆编号
-            int code = new Scanner(System.in).nextInt();
+            int code;
+
+            code = new Scanner(System.in).nextInt();
+
+            //验证编号是否正确
+            if (list.length <= code){
+
+                System.out.println("未找到相关车辆信息！请重新选择");
+
+                //车辆编号
+                code = new Scanner(System.in).nextInt();
+
+                if (list.length <= code){
+
+                    System.out.println("未找到相关车辆信息！退出系统！");
+                    System.exit(0);
+
+                }
+            }
 
             System.out.println("请输入要租多少辆:");
             int count = new Scanner(System.in).nextInt();
@@ -49,8 +67,6 @@ public class Test {
             System.out.println("欢迎下次使用");
 
         }
-
-
 
     }
 }
